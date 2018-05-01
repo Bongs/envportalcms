@@ -8,7 +8,7 @@ from polls.models import Poll
 class PollToolbar(CMSToolbar):
   supported_apps = (
     'polls',
-    'polls_cms_integration',
+    'polls_cms_integration'
   )
 
   watch_models = [Poll]
@@ -21,13 +21,12 @@ class PollToolbar(CMSToolbar):
 
     menu.add_sideframe_item(
       name=_('Poll list'),
-      url=admin_reverse('polls_poll_changelist'),
+      url=admin_reverse('polls_poll_changelist')
     )
 
     menu.add_modal_item(
       name=_('Add new poll'),
-      url=admin_reverse('polls_poll_add'),
+      url=admin_reverse('polls_poll_add')
     )
-
 
 toolbar_pool.register(PollToolbar)  # register the toolbar
