@@ -134,13 +134,13 @@ INSTALLED_APPS = (
     'djangocms_file',
     'djangocms_link',
     'djangocms_picture',
-    'djangocms_style',
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
     'envportalcms',
     'polls_cms_integration',
     'polls',
+    'aldryn_style',
     'aldryn_bootstrap3',
     'cmsplugin_survey'
 )
@@ -172,7 +172,9 @@ CMS_TEMPLATES = (
     ## Customize this
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
+    ('home.html', 'Home'),
+    ('about.html', 'About')
 )
 
 CMS_PERMISSION = True
@@ -211,3 +213,26 @@ ALDRYN_BOOTSTRAP3_ICONSETS = [
 ]
 
 ALDRYN_BOOTSTRAP3_GRID_SIZE = 12
+
+# CKEDITOR_SETTINGS = {
+#   'styleSet': [{
+#       'name': 'Page header H1',
+#       'element': 'h1',
+#       'attributes': {
+#         'class': 'page-header'
+#       },
+#     }, {
+#       'name': 'Page header H2',
+#       'element': 'h2',
+#       'attributes': {
+#         'class': 'page-header'
+#       },
+#     }, {
+#       'name': 'Page header H3',
+#       'element': 'h3',
+#       'attributes': {
+#         'class': 'page-header'
+#       },
+#     }
+#   ]
+# }
