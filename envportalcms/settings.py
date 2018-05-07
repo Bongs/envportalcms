@@ -142,7 +142,9 @@ INSTALLED_APPS = (
     'polls',
     'aldryn_style',
     'aldryn_bootstrap3',
-    'cmsplugin_survey'
+    'cmsplugin_survey',
+    'taggit',
+    'cms_saq'
 )
 
 LANGUAGES = (

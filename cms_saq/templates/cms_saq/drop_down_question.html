@@ -1,0 +1,71 @@
+{% load sekizai_tags %}
+{% load i18n %}
+
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}js/libs/underscore-1.3.1.min.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}js/libs/json2.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}js/libs/backbone-0.9.1.min.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}js/saq.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+    $(function () {
+        var model = new SAQ.Question({
+            slug: '{{ question.slug }}'
+        });
+        var view = new SAQ.DropDownQuestionView({
+            el: $('#saq-question-drop-{{ question.slug }}')[0],
+            model: model
+        });
+        SAQ.questions.add(model);
+        $("#slider.slider").slider();
+    });
+</script>
+{% endaddtoblock %}
+
+<div class="saq-question-container saq-question-drop-container {{ question.slug }}-container"
+{% if not triggered %} style="display:none;" {% endif %}
+{% if depends_on %} data-dependency="{{ depends_on }}" {% endif %}
+>
+{% if question.label %}
+<div>
+    <label class="saq-question-label" for="saq-question-drop-{{ question.slug }}">{% trans question.label %}</label>
+    <span class="saq-question-help-text">{% if question.help_text %}{% trans question.help_text %}{% endif %}</span>
+</div>
+{% endif %}
+<div id="saq-question-drop-{{ question.slug }}">
+<div class="saq-question-error"></div>
+{% if range %}
+<!--
+    Rendering the slidebar here. I've "answers" (which is an array of objects). "answer" object has attribute "order". Need to construct an array of value of the attribute "order".
+    For e.g. Say answers has 4 objects - ans1, ans2, ans3, ans4
+    and ans1.order = 1, ans2.order = 2, ans3.order = 3, ans4.order = 4
+    Construct an array [1,2,3,4]
+
+    Then find min and max value from the array and assign them to data attribute in following input element:
+    data-slider-min = "{{ min_value }}"
+    data-slider-max = "{{ max_value }}"
+
+    Also find which answer is set as default (ans.is_default) or using following logic ({% if submission and answer.slug == submission.answer %})
+    s=data-slider-value = "{{ answer.slug }}"
+-->
+<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="BC" id="slider" data-slider-tooltip="hide" data-slider-handle="triangle" />
+{% else %}
+<select class="saq-question saq-question-drop">
+    <option value="">---</option>
+    {% if grouped_answers %}
+        {% for label, group in grouped_answers %}
+            <optgroup label="{% trans label %}">
+                {% for answer in group %}
+                    <option value="{{ answer.slug }}" {% if submission and answer.slug == submission.answer %}selected{% endif %}>{% trans answer.title %}</option>
+                {% endfor %}
+            </optgroup>
+        {% endfor %}
+    {% else %}
+        {% for answer in answers %}
+            <option value="{{ answer.slug }}" {% if submission and answer.slug == submission.answer %}selected{% endif %}>{% trans answer.title %}</option>
+        {% endfor %}
+    {% endif %}
+</select>
+{% endif %}
+</div>
+</div>
+{# vim: set filetype=htmldjango: #}
