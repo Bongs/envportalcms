@@ -176,7 +176,8 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
     ('home.html', 'Home'),
-    ('about.html', 'About')
+    ('about.html', 'About'),
+    ('env_survey.html', 'Survey')
 )
 
 CMS_PERMISSION = True

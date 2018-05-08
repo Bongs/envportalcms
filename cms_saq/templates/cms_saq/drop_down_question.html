@@ -34,37 +34,38 @@
 <div id="saq-question-drop-{{ question.slug }}">
 <div class="saq-question-error"></div>
 {% if range %}
-<!--
-    Rendering the slidebar here. I've "answers" (which is an array of objects). "answer" object has attribute "order". Need to construct an array of value of the attribute "order".
-    For e.g. Say answers has 4 objects - ans1, ans2, ans3, ans4
-    and ans1.order = 1, ans2.order = 2, ans3.order = 3, ans4.order = 4
-    Construct an array [1,2,3,4]
+    <!--
+        Rendering the slidebar here. I've "answers" (which is an array of objects). "answer" object has attribute "order". Need to construct an array of value of the attribute "order".
+        For e.g. Say answers has 4 objects - ans1, ans2, ans3, ans4
+        and ans1.order = 1, ans2.order = 2, ans3.order = 3, ans4.order = 4
+        Construct an array [1,2,3,4]
 
-    Then find min and max value from the array and assign them to data attribute in following input element:
-    data-slider-min = "{{ min_value }}"
-    data-slider-max = "{{ max_value }}"
+        Then find min and max value from the array and assign them to data attribute in following input element:
+        data-slider-min = " min_value "
+        data-slider-max = " max_value "
 
-    Also find which answer is set as default (ans.is_default) or using following logic ({% if submission and answer.slug == submission.answer %})
-    s=data-slider-value = "{{ answer.slug }}"
--->
-<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="BC" id="slider" data-slider-tooltip="hide" data-slider-handle="triangle" />
+        Also find which answer is set as default (ans.is_default) or using following logic ({ if submission and answer.slug == submission.answer })
+        s=data-slider-value = " answer.slug "
+    -->
+
+    <input type="text" class="saq-question saq-question-free slider" value="{{ submission.answer }}" data-slider-min="0" data-slider-max="255" data-slider-step="1" data-slider-value="128" data-slider-id="" id="slider" data-slider-tooltip="hide" data-slider-handle="triangle" />
 {% else %}
-<select class="saq-question saq-question-drop">
-    <option value="">---</option>
-    {% if grouped_answers %}
-        {% for label, group in grouped_answers %}
-            <optgroup label="{% trans label %}">
-                {% for answer in group %}
-                    <option value="{{ answer.slug }}" {% if submission and answer.slug == submission.answer %}selected{% endif %}>{% trans answer.title %}</option>
-                {% endfor %}
-            </optgroup>
-        {% endfor %}
-    {% else %}
-        {% for answer in answers %}
-            <option value="{{ answer.slug }}" {% if submission and answer.slug == submission.answer %}selected{% endif %}>{% trans answer.title %}</option>
-        {% endfor %}
-    {% endif %}
-</select>
+    <select class="saq-question saq-question-drop">
+        <option value="">---</option>
+        {% if grouped_answers %}
+            {% for label, group in grouped_answers %}
+                <optgroup label="{% trans label %}">
+                    {% for answer in group %}
+                        <option value="{{ answer.slug }}" {% if submission and answer.slug == submission.answer %}selected{% endif %}>{% trans answer.title %}</option>
+                    {% endfor %}
+                </optgroup>
+            {% endfor %}
+        {% else %}
+            {% for answer in answers %}
+                <option value="{{ answer.slug }}" {% if submission and answer.slug == submission.answer %}selected{% endif %}>{% trans answer.title %}</option>
+            {% endfor %}
+        {% endif %}
+    </select>
 {% endif %}
 </div>
 </div>
