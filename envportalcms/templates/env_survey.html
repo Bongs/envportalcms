@@ -7,41 +7,32 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1 class="page-header">
-          {% placeholder "page_title" %}
+        <!-- <h1 class="page-header"> -->
+          <!-- { placeholder "page_title" } -->
           <!-- <small></small> -->
-        </h1>
+        <!-- </h1> -->
         <!-- 
           <ol class="breadcrumb">
             <li><a href="index.html">Home</a></li>
             <li class="active">Full Width Page</li>
           </ol>
         -->
+        {% placeholder "content" or %}
+          <!-- <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <p>Most of Start Bootstrap's unstyled templates can be directly integrated into the Modern Business template. You can view all of our unstyled templates on our website at <a href="http://startbootstrap.com/template-categories/unstyled">http://startbootstrap.com/template-categories/unstyled</a>.</p>
+              </div>
+            </div>
+          </div> -->
+        {% endplaceholder %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <script>(function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd0QPzSj0UQWRa3qGQLRck3N_2Bk_2FCwQm92_2BKGZhsZGk29j.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
       </div>
     </div>
 
-    {% placeholder "content" or %}
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Most of Start Bootstrap's unstyled templates can be directly integrated into the Modern Business template. You can view all of our unstyled templates on our website at <a href="http://startbootstrap.com/template-categories/unstyled">http://startbootstrap.com/template-categories/unstyled</a>.</p>
-          </div>
-        </div>
-      </div> -->
-    {% endplaceholder %}
-    <div class="row">
-      <div class="col-xs-12">
-        {% placeholder "question" %}
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-md-3">{% placeholder "prev_link" %}</div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-2 col-md-3">{% placeholder "prev_link" %}</div>
-      <div class="col-xs-2 col-md-3 col-xs-offset-8 col-md-offset-6 text-right">{% placeholder "next_link" %}</div>
-    </div>
   </div>
 {% endblock content %}
