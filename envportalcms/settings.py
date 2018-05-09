@@ -29,6 +29,7 @@ SECRET_KEY = '1g%-47gq4)sye!&ml-#p%m_@$h#^77y_9*$(@&mi#)akhddlor'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['localhost', '35.231.236.220']
 
 
 # Application definition
@@ -221,16 +222,6 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
-
-ALDRYN_BOOTSTRAP3_ICONSETS = [
-    ('glyphicons', 'glyphicons', 'Glyphicons'),
-    ('fontawesome', 'fa', 'Font Awesome')
-    # custom iconsets have to be JSON
-    # ('{"iconClass": "icon", "iconClassFix": "icon-", "icons": [...]}', 'icon', 'Custom Font Icons'),
-    # ('{"svg": true, "spritePath": "sprites/icons.svg", "iconClass": "icon", "iconClassFix": "icon-", "icons": [...]}', 'icon', 'Custom SVG Icons'),
-]
-
-ALDRYN_BOOTSTRAP3_GRID_SIZE = 12
 
 # CKEDITOR_SETTINGS = {
 #   'styleSet': [{
