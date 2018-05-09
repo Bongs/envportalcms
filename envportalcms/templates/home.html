@@ -1,16 +1,370 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+{% load cms_tags staticfiles %}
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
 {% block content %}
   {% placeholder "content" or %}
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Most of Start Bootstrap's unstyled templates can be directly integrated into the Modern Business template. You can view all of our unstyled templates on our website at <a href="http://startbootstrap.com/template-categories/unstyled">http://startbootstrap.com/template-categories/unstyled</a>.</p>
+    <!-- Carousel start-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <!-- <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol> -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="{% static 'images/Image-background.jpg' %}" alt="First slide" height="400">
+          <div class="carousel-caption d-none d-md-block">
+          <h4>As the climate warms, how much, and how quickly, <br/>will Earth's glaciers melt?</h4>
+          <a class="btn text-danger btn-outline-light bg-dark-blue font-weight-bold p-2 rounded-0 mt-3" style='font-size:11px;'>
+            <span class="p-1 d-inline-block">TAKE A SURVEY</span>
+          </a>
+        </div>
+        </div>
+      </div>
+      <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+    </div>
+    <!-- Carousel end-->
+
+    <!-- Main Content start-->
+    <div class="d-flex justify-content-center bg-light pt-4 pb-4">
+      <div class="col-md-6">
+        <h5 class="font-weight-bold text-secondary pl-3">TOP STORIES</h5>
+        <div class="left-content">
+          <div class="card d-inline-block mb-4" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'images/TopStory-Image01.png' %}" alt="Top Story Image">
+            <div class="media-tag">
+              <img src="{% static 'images/Video-Icon.png' %}" height="40">
+            </div>
+            <div class="card-body text-left">
+              <h6 class="card-title font-weight-bold text-secondary mb-1">Lorem Ipsum Title</h6>
+              <p class="card-text text-secondary mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut incididunt ut incididunt ut ...</p>
+              <p class="posted-txt col-md-12 p-0 d-inline-block m-0">
+                <span class="text-danger font-weight-bold">Viraj Avachat</span>
+                <span>Posted On 08 May 18</span>
+              </p>              
+            </div>
+            <div class="bg-light float-left col-md-12 p-0">
+              <ul class="list-inline m-0 row pt-1 pb-1">
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/like.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/comment-icom.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/download-icon.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/share-icon.png' %}">
+                  <span>25</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card d-inline-block mb-4" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'images/TopStory-Image01.png' %}" alt="Top Story Image">
+            <div class="media-tag">
+              <img src="{% static 'images/Video-Icon.png' %}" height="40">
+            </div>
+            <div class="card-body text-left">
+              <h6 class="card-title font-weight-bold text-secondary mb-1">Lorem Ipsum Title</h6>
+              <p class="card-text text-secondary mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut incididunt ut incididunt ut ...</p>
+              <p class="posted-txt col-md-12 p-0 d-inline-block m-0">
+                <span class="text-danger font-weight-bold">Viraj Avachat</span>
+                <span>Posted On 08 May 18</span>
+              </p>              
+            </div>
+            <div class="bg-light float-left col-md-12 p-0">
+              <ul class="list-inline m-0 row pt-1 pb-1">
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/like.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/comment-icom.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/download-icon.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/share-icon.png' %}">
+                  <span>25</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card d-inline-block mb-4" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'images/TopStory-Image01.png' %}" alt="Top Story Image">
+            <div class="media-tag">
+              <img src="{% static 'images/Video-Icon.png' %}" height="40">
+            </div>
+            <div class="card-body text-left">
+              <h6 class="card-title font-weight-bold text-secondary mb-1">Lorem Ipsum Title</h6>
+              <p class="card-text text-secondary mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut incididunt ut incididunt ut ...</p>
+              <p class="posted-txt col-md-12 p-0 d-inline-block m-0">
+                <span class="text-danger font-weight-bold">Viraj Avachat</span>
+                <span>Posted On 08 May 18</span>
+              </p>              
+            </div>
+            <div class="bg-light float-left col-md-12 p-0">
+              <ul class="list-inline m-0 row pt-1 pb-1">
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/like.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/comment-icom.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/download-icon.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/share-icon.png' %}">
+                  <span>25</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card d-inline-block mb-4" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'images/TopStory-Image01.png' %}" alt="Top Story Image">
+            <div class="media-tag">
+              <img src="{% static 'images/Video-Icon.png' %}" height="40">
+            </div>
+            <div class="card-body text-left">
+              <h6 class="card-title font-weight-bold text-secondary mb-1">Lorem Ipsum Title</h6>
+              <p class="card-text text-secondary mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut incididunt ut incididunt ut ...</p>
+              <p class="posted-txt col-md-12 p-0 d-inline-block m-0">
+                <span class="text-danger font-weight-bold">Viraj Avachat</span>
+                <span>Posted On 08 May 18</span>
+              </p>              
+            </div>
+            <div class="bg-light float-left col-md-12 p-0">
+              <ul class="list-inline m-0 row pt-1 pb-1">
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/like.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/comment-icom.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/download-icon.png' %}">
+                  <span>25</span>
+                </li>
+                <li class="list-inline-item col-md-3 m-0">
+                  <img src="{% static 'images/share-icon.png' %}">
+                  <span>25</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="load-btn text-center text-white p-2">MORE STORIES</div>
+        </div>  
+      </div>
+      <div class="col-md-3">
+        <h5 class="font-weight-bold text-secondary pl-3">STATISTICS</h5>
+        <div class="card mb-3" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'images/statistics-01.png' %}" alt="Card image cap">
+        </div>
+        <div class="card mb-3" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'images/statistics-02.png' %}" alt="Card image cap">
+        </div>
+        <div class="card mb-3" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'images/statistics-03.png' %}" alt="Card image cap">
         </div>
       </div>
     </div>
+    <!-- Main Content end-->
+
+    <!-- Footer Start-->
+    <footer class="d-flex justify-content-center pt-4 pb-5 col-md-12">
+      <div class="col-md-10">
+        <h5 class="font-weight-bold text-secondary pl-3">RELATED STORIES</h5>
+        <ul class="list-inline">
+          <li class="list-inline-item position-relative">
+            <img src="{% static 'images/climate-thumb.png' %}" alt="" class="img-responsive" height="180">
+            <p class="position-absolute text-center">THE CLIMATE</p>
+          </li>
+          <li class="list-inline-item position-relative">
+            <img src="{% static 'images/wind-thumb.png' %}" alt="" class="img-responsive" height="180">
+            <p class="position-absolute text-center">RENEWABLE ENERGY</p>
+          </li>
+          <li class="list-inline-item position-relative">
+            <img src="{% static 'images/GlobalWarming-Image.png' %}" alt="" class="img-responsive" height="180">
+            <p class="position-absolute text-center">GLOBAL WARMING</p>
+          </li>
+          <li class="list-inline-item position-relative">
+            <img src="{% static 'images/AcidRain-thumb.png' %}" alt="" class="img-responsive" height="180">
+            <p class="position-absolute text-center">ACID RAIN</p>
+          </li>
+          <li class="list-inline-item position-relative">
+            <img src="{% static 'images/pollution-thumb.png' %}" alt="" class="img-responsive" height="180">
+            <p class="position-absolute text-center">AIR POLLUTION</p>
+          </li>
+        </ul>
+      </div>
+    </footer>     
+    <!-- Footer End-->
+
+    <!-- <div class="container">
+
+      <h1 class="my-4">Welcome to Modern Business</h1>
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Card Title</h4>
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Card Title</h4>
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Card Title</h4>
+            <div class="card-body">
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Portfolio Heading</h2>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project One</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Two</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Three</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Four</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Five</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Project Six</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Modern Business Features</h2>
+          <p>The Modern Business template by Start Bootstrap includes:</p>
+          <ul>
+            <li>
+              <strong>Bootstrap v4</strong>
+            </li>
+            <li>jQuery</li>
+            <li>Font Awesome</li>
+            <li>Working contact form with validation</li>
+            <li>Unstyled page elements for easy customization</li>
+          </ul>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+        </div>
+        <div class="col-md-4">
+          <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+        </div>
+      </div>
+
+    </div> -->
   {% endplaceholder %}
 {% endblock content %}

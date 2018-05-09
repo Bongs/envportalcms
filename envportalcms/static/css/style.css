@@ -1,0 +1,41 @@
+.bg-dark-blue {
+	background: #141425;
+}
+.card-text {
+	font-size: 13px;
+}
+.posted-txt span:first-child{
+	font-size: 12px;
+	float: left;
+}
+.posted-txt span:last-child{
+	font-size: 12px;
+	float: right;
+	color: #6c757d91;
+}
+.list-inline-item span {
+	font-size: 12px;
+	color: #6c757d91;
+	font-weight: bold;
+}
+.media-tag {
+	position: absolute;
+    top: 41%;
+    left: 40%;
+}
+.load-btn {
+    background-color: #a91717bf;	
+}
+.justify-content-center .left-content .card:nth-child(odd) {
+	margin-right: 15px;
+}
+
+footer .list-inline-item p {
+	bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.load-btn {
+	margin-right: 1.9rem;
+}
