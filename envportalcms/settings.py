@@ -31,17 +31,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['localhost', '35.231.236.220']
 
-
 # Application definition
 
-
-
-
-
 ROOT_URLCONF = 'envportalcms.urls'
-
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -222,6 +214,9 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # CKEDITOR_SETTINGS = {
 #   'styleSet': [{

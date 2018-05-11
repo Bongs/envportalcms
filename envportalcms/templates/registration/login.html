@@ -1,0 +1,35 @@
+{% extends "registration/base_registration.html" %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-7">
+        <div class="card">
+          <div class="card-header">
+            Sign in
+          </div>
+          <div class="card-body">
+            <form method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="input_username">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" id="input_username">
+              </div>
+              <div class="form-group">
+                <label for="input_password">Password</label>
+                <input type="password" name="password" class="form-control" id="input_password" placeholder="Password">
+                {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+          </div>
+          <div class="card-footer text-muted">
+            <a href="/accounts/register">Sign up on Environmental Portal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

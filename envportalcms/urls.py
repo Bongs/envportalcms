@@ -19,6 +19,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
   url(r'^admin/', include(admin.site.urls)),  # NOQA
+  url(r'^accounts/', include('registration.backends.simple.urls')),
   url(r'^polls/', include('polls.urls', namespace='polls')),
   url(r'^survey/', include('cmsplugin_survey.urls')),
   # url(r'^saq/', include('cms_saq.urls')),
