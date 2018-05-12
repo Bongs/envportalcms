@@ -20,13 +20,13 @@
 }
 .media-tag {
 	position: absolute;
-    top: 41%;
+    bottom: -18px;
     left: 40%;
 }
 .load-btn {
     background-color: #a91717bf;	
 }
-.justify-content-center .left-content .card:nth-child(odd) {
+.justify-content-center .card-content .card:nth-child(odd) {
 	margin-right: 15px;
 }
 
@@ -38,4 +38,16 @@ footer .list-inline-item p {
 
 .load-btn {
 	margin-right: 1.9rem;
+}
+
+
+
+
+
+/*Media Queries*/
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+	.card-content > div { max-width: 100%; }
 }
