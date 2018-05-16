@@ -22,6 +22,7 @@ urlpatterns += i18n_patterns(
   url(r'^accounts/', include('registration.backends.simple.urls')),
   url(r'^polls/', include('polls.urls', namespace='polls')),
   url(r'^survey/', include('cmsplugin_survey.urls')),
+  url(r'^survey_results/', include('survey_results.urls')),
   # url(r'^saq/', include('cms_saq.urls')),
   url(r'^', include('cms.urls'))
 )
