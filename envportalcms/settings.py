@@ -152,7 +152,8 @@ INSTALLED_APPS = (
     'djangocms_bootstrap4.contrib.bootstrap4_media',
     'djangocms_bootstrap4.contrib.bootstrap4_picture',
     'djangocms_bootstrap4.contrib.bootstrap4_tabs',
-    'djangocms_bootstrap4.contrib.bootstrap4_utilities'
+    'djangocms_bootstrap4.contrib.bootstrap4_utilities',
+    'survey_results'
 )
 
 LANGUAGES = (
