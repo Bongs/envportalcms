@@ -11,6 +11,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
 from polls import views
 
+admin.site.site_header = 'Environmental Portal'
+admin.site.site_title = 'Environmental Portal'
+admin.site.index_title = 'Environmental Portal'
 admin.autodiscover()
 
 urlpatterns = [
